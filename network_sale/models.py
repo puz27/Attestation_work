@@ -15,7 +15,7 @@ class TradingNetwork(models.Model):
 
 class Product(models.Model):
     """ Products """
-    name = models.CharField(verbose_name='Product title', max_length=100)
+    title = models.CharField(verbose_name='Product title', max_length=100)
     model = models.CharField(verbose_name='Product model', max_length=100)
     date = models.DateField(verbose_name='Date of going on sale', auto_now=False, auto_now_add=False)
 
@@ -27,8 +27,8 @@ class Product(models.Model):
         return self.name
 
 
-class Company(models.Model):
-    """ Companies """
+class Provider(models.Model):
+    """ Provider """
     TYPES = [
         ('Factory', 'Factory'),
         ('Retail', 'Retail'),
@@ -48,8 +48,8 @@ class Company(models.Model):
     arrears = models.DecimalField(max_digits=100, decimal_places=2, verbose_name='Debt', blank=True, default=0)
 
     class Meta:
-        verbose_name = "Company"
-        verbose_name_plural = "Companies"
+        verbose_name = "Provider"
+        verbose_name_plural = "Providers"
 
     def __str__(self):
         return self.name
