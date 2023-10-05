@@ -1,7 +1,7 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
-from network_sale.models import Provider, Product, TradingNetwork
-from network_sale.serializers.network_sale import ProductSerializer, TradingNetworkSerializer, ProviderSerializer
+from network_sale.models import Product, TradingNetwork, Unit
+from network_sale.serializers.network_sale import ProductSerializer, TradingNetworkSerializer, UnitSerializer
 from network_sale.permissions import IsOwner
 
 
@@ -77,38 +77,37 @@ class ProductDeleteView(generics.DestroyAPIView):
     serializer_class = ProductSerializer
 
 
-# Provider
-class ProviderListView(generics.ListAPIView):
-    """ All Providers view"""
-    queryset = Provider.objects.all()
-    serializer_class = ProviderSerializer
+# Unit
+class UnitListView(generics.ListAPIView):
+    """ All Units view"""
+    queryset = Unit.objects.all()
+    serializer_class = UnitSerializer
 
 
-class ProviderDetailView(generics.RetrieveAPIView):
-    """ Detailed information about Provider """
-    queryset = Provider.objects.all()
-    serializer_class = ProviderSerializer
+class UnitDetailView(generics.RetrieveAPIView):
+    """ Detailed information about Unit """
+    queryset = Unit.objects.all()
+    serializer_class = UnitSerializer
 
 
-class ProviderCreateView(generics.CreateAPIView):
-    """ Create Provider """
-    queryset = Provider.objects.all()
-    serializer_class = ProviderSerializer
+class UnitCreateView(generics.CreateAPIView):
+    """ Create Unit """
+    queryset = Unit.objects.all()
+    serializer_class = UnitSerializer
 
     def perform_create(self, serializer):
-        new_course = serializer.save()
-        new_course.owner = self.request.user
-        new_course.save()
+        new_unit = serializer.save()
+        new_unit.owner = self.request.user
+        new_unit.save()
 
 
-class ProviderUpdateView(generics.UpdateAPIView):
-    """ Update information about Provider """
-    queryset = Provider.objects.all()
-    serializer_class = ProviderSerializer
+class UnitUpdateView(generics.UpdateAPIView):
+    """ Update information about Unit """
+    queryset = Unit.objects.all()
+    serializer_class = UnitSerializer
 
 
-class ProviderDeleteView(generics.DestroyAPIView):
-    """ Delete Provider """
-    queryset = Provider.objects.all()
-    serializer_class = ProviderSerializer
-
+class UnitDeleteView(generics.DestroyAPIView):
+    """ Delete Unit """
+    queryset = Unit.objects.all()
+    serializer_class = UnitSerializer

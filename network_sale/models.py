@@ -27,31 +27,32 @@ class Product(models.Model):
         return self.title
 
 
-class Provider(models.Model):
-    """ Provider """
+class Unit(models.Model):
+    """ Unit of Trading Network"""
     TYPES = [
         ('Factory', 'Factory'),
         ('Retail', 'Retail'),
         ('Individual', 'Individual')
     ]
 
-    level = models.IntegerField(verbose_name='level in hierarchy', default=0)
-    type = models.CharField(verbose_name='type of provider', choices=TYPES)
-    name = models.CharField(verbose_name='provider title', max_length=100, unique=True)
-    email = models.EmailField(max_length=100, unique=True)
-    country = models.CharField(verbose_name='country', max_length=100)
+    level = models.IntegerField(verbose_name='level of unit in hierarchy', default=0)
+    type = models.CharField(verbose_name='type of unit', choices=TYPES)
+    name = models.CharField(verbose_name='unit title', max_length=100, unique=True)
+    email = models.EmailField(max_length=100, unique=True, verbose_name='unit mail', null=True, blank=True)
+    country = models.CharField(verbose_name='country', max_length=100, null=True, blank=True)
     town = models.CharField(verbose_name='town title', max_length=100)
     street = models.CharField(verbose_name='street title', max_length=100)
-    structure_number = models.CharField(verbose_name='number of structure', max_length=100)
+    structure_number = models.CharField(verbose_name='number of structure for unit', max_length=100)
     created_date = models.DateField(auto_now_add=True)
-    arrears = models.DecimalField(max_digits=100, decimal_places=2, verbose_name='arrears', blank=True, default=0)
-    trading_network = models.ForeignKey(TradingNetwork, verbose_name="trading Network", on_delete=models.CASCADE)
-    provider = models.ForeignKey('self', on_delete=models.SET_NULL, verbose_name='provider', related_name='types_company', null=True, blank=True)
+    arrears = models.DecimalField(max_digits=100, decimal_places=2, verbose_name='arrears', null=True, blank=True, default=0)
+    trading_network = models.ForeignKey(TradingNetwork, verbose_name="unit works in trading Network", on_delete=models.CASCADE)
+    provider = models.ForeignKey('self', on_delete=models.SET_NULL, verbose_name='provider for unit', related_name='unit_provider', null=True, blank=True)
     products = models.ManyToManyField(Product, related_name='products')
+    provider_url = models.CharField(verbose_name='provider url for admin panel', max_length=300, null=True, blank=True)
 
     class Meta:
-        verbose_name = "Provider"
-        verbose_name_plural = "Providers"
+        verbose_name = "Unit"
+        verbose_name_plural = "Units"
 
     def __str__(self):
         return self.name

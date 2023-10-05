@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from network_sale.models import Product, TradingNetwork, Provider
+from network_sale.models import Product, TradingNetwork, Unit
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -16,10 +16,10 @@ class TradingNetworkSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class ProviderSerializer(serializers.ModelSerializer):
+class UnitSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Provider
+        model = Unit
         fields = '__all__'
         read_only_fields = ['arrears']
         arrears = 1
