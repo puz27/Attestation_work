@@ -48,7 +48,6 @@ class Unit(models.Model):
     trading_network = models.ForeignKey(TradingNetwork, verbose_name="unit works in trading Network", on_delete=models.CASCADE)
     provider = models.ForeignKey('self', on_delete=models.SET_NULL, verbose_name='provider for unit', related_name='unit_provider', null=True, blank=True)
     products = models.ManyToManyField(Product, related_name='products')
-    provider_url = models.CharField(verbose_name='provider url for admin panel', max_length=300, null=True, blank=True)
 
     class Meta:
         verbose_name = "Unit"
