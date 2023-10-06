@@ -1,3 +1,4 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from network_sale.models import Product, TradingNetwork, Unit
@@ -82,6 +83,9 @@ class UnitListView(generics.ListAPIView):
     """ All Units view"""
     queryset = Unit.objects.all()
     serializer_class = UnitSerializer
+    # filter by country (http://127.0.0.1:8000/api/v1/units?country=Russia)
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['country']
 
 
 class UnitDetailView(generics.RetrieveAPIView):

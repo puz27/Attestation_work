@@ -26,7 +26,6 @@ class UnitAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     """ Product admin panel """
     list_display = ('title', 'model', 'date',)
-    list_filter = ('title',)
 
 
 @admin.register(TradingNetwork)

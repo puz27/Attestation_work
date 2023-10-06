@@ -21,5 +21,7 @@ class UnitSerializer(serializers.ModelSerializer):
     class Meta:
         model = Unit
         fields = '__all__'
+        # deny update
         read_only_fields = ['arrears']
         arrears = 1
+
