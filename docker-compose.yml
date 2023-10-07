@@ -28,6 +28,7 @@ services:
     command: bash -c "
       python manage.py migrate
       && python manage.py prepare_users
+      && python manage.py loaddata db.json
       && python manage.py runserver 0.0.0.0:8000
       "
     depends_on:
@@ -37,4 +38,3 @@ services:
       - "8000:8000"
     volumes:
         - ./app/:/app/
-    entrypoint: ["./entrypoint.sh"]
