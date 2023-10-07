@@ -1,17 +1,9 @@
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated, BasePermission, SAFE_METHODS, AllowAny
+from rest_framework.permissions import IsAuthenticated
 from users.models import Users
 from users.serializers.users import UserSerializer, UserRegisterSerializer
 from rest_framework.response import Response
 from rest_framework import status
-
-
-class IsOwnerOrReadOnly(BasePermission):
-
-    def has_object_permission(self, request, view, obj):
-        if request.method in SAFE_METHODS:
-            return True
-        return obj.pk == request.user.pk
 
 
 class UsersListView(generics.ListAPIView):
@@ -35,13 +27,13 @@ class UsersCreateView(generics.CreateAPIView):
 class UsersUpdateView(generics.UpdateAPIView):
     queryset = Users.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    permission_classes = [IsAuthenticated]
 
 
 class UsersDeleteView(generics.DestroyAPIView):
     queryset = Users.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsOwnerOrReadOnly]
+    permission_classes = [IsAuthenticated]
 
 
 class UsersRegistrationView(generics.CreateAPIView):

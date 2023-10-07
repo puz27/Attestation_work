@@ -26,11 +26,6 @@ class TradingNetworkCreateView(generics.CreateAPIView):
     serializer_class = TradingNetworkSerializer
     permission_classes = [IsAuthenticated]
 
-    def perform_create(self, serializer):
-        new_course = serializer.save()
-        new_course.owner = self.request.user
-        new_course.save()
-
 
 class TradingNetworkUpdateView(generics.UpdateAPIView):
     """ Update information about Trading Network """
@@ -66,11 +61,6 @@ class ProductCreateView(generics.CreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = [IsAuthenticated]
-
-    def perform_create(self, serializer):
-        new_course = serializer.save()
-        new_course.owner = self.request.user
-        new_course.save()
 
 
 class ProductUpdateView(generics.UpdateAPIView):
@@ -110,11 +100,6 @@ class UnitCreateView(generics.CreateAPIView):
     queryset = Unit.objects.all()
     serializer_class = UnitSerializer
     permission_classes = [IsAuthenticated]
-
-    def perform_create(self, serializer):
-        new_unit = serializer.save()
-        new_unit.owner = self.request.user
-        new_unit.save()
 
 
 class UnitUpdateView(generics.UpdateAPIView):

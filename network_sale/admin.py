@@ -1,20 +1,17 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from django.utils.safestring import mark_safe
 from network_sale.models import Unit, Product, TradingNetwork
-from django.urls import reverse
 
 
 @admin.register(Unit)
 class UnitAdmin(admin.ModelAdmin):
-    """ Units admin panel """
+    """ Units admin panel with url and clear action """
     list_display = ('name', 'provider', 'town', 'arrears', 'provider_urls')
     list_filter = ('town',)
     actions = ['clear_arrears']
 
     def provider_urls(self, obj):
         if obj.provider:
-            # url = reverse('admin:unit', args=(obj.provider.id,))
             return format_html("<a href='{url}'>{url}</a>", url=obj.provider.id)
 
     @admin.action(description='Clear arrears')

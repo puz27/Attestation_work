@@ -44,10 +44,25 @@ class Unit(models.Model):
     street = models.CharField(verbose_name='street title', max_length=100)
     structure_number = models.CharField(verbose_name='number of structure for unit', max_length=100)
     created_date = models.DateField(auto_now_add=True)
-    arrears = models.DecimalField(max_digits=100, decimal_places=2, verbose_name='arrears', null=True, blank=True, default=0)
-    trading_network = models.ForeignKey(TradingNetwork, verbose_name="unit works in trading Network", on_delete=models.CASCADE)
-    provider = models.ForeignKey('self', on_delete=models.SET_NULL, verbose_name='provider for unit', related_name='unit_provider', null=True, blank=True)
-    products = models.ManyToManyField(Product, related_name='products')
+    arrears = models.DecimalField(
+        max_digits=100,
+        decimal_places=2,
+        verbose_name='arrears',
+        null=True, blank=True,
+        default=0)
+    trading_network = models.ForeignKey(
+        TradingNetwork,
+        verbose_name="unit works in trading Network",
+        on_delete=models.CASCADE)
+    provider = models.ForeignKey(
+        'self', on_delete=models.SET_NULL,
+        verbose_name='provider for unit',
+        # related_name='unit_provider',
+        null=True,
+        blank=True)
+    products = models.ManyToManyField(Product,
+                                      # related_name='products'
+                                      )
 
     class Meta:
         verbose_name = "Unit"

@@ -1,0 +1,168 @@
+[
+  {
+    "model": "network_sale.tradingnetwork",
+    "pk": 1,
+    "fields": {
+      "title": "HARLEY-DAVIDSON"
+    }
+  },
+  {
+    "model": "network_sale.tradingnetwork",
+    "pk": 2,
+    "fields": {
+      "title": "COCA-COLA"
+    }
+  },
+  {
+    "model": "network_sale.tradingnetwork",
+    "pk": 3,
+    "fields": {
+      "title": "MARS"
+    }
+  },
+  {
+    "model": "network_sale.tradingnetwork",
+    "pk": 4,
+    "fields": {
+      "title": "CONVERSE"
+    }
+  },
+  {
+    "model": "network_sale.tradingnetwork",
+    "pk": 5,
+    "fields": {
+      "title": "KFC"
+    }
+  },
+  {
+    "model": "network_sale.product",
+    "pk": 1,
+    "fields": {
+      "title": "Engine",
+      "model": "Sportster 883",
+      "date": "2023-10-09"
+    }
+  },
+  {
+    "model": "network_sale.product",
+    "pk": 2,
+    "fields": {
+      "title": "Wheel",
+      "model": "Sportster 883",
+      "date": "2023-10-09"
+    }
+  },
+  {
+    "model": "network_sale.product",
+    "pk": 3,
+    "fields": {
+      "title": "Spicy ╤hicken",
+      "model": "Spicy ╤hicken",
+      "date": "2023-10-09"
+    }
+  },
+  {
+    "model": "network_sale.product",
+    "pk": 4,
+    "fields": {
+      "title": "Normal ╤hicken",
+      "model": "Normal ╤hicken",
+      "date": "2023-10-09"
+    }
+  },
+  {
+    "model": "network_sale.product",
+    "pk": 5,
+    "fields": {
+      "title": "Sneakers Chuck taylor",
+      "model": "Sneakers Chuck taylor",
+      "date": "2023-10-09"
+    }
+  },
+  {
+    "model": "network_sale.unit",
+    "pk": 1,
+    "fields": {
+      "level": 0,
+      "type": "Factory",
+      "name": "New York Factory",
+      "email": null,
+      "country": null,
+      "town": "New York",
+      "street": "Long",
+      "structure_number": "12",
+      "created_date": "2023-10-07",
+      "arrears": "0.00",
+      "trading_network": 1,
+      "provider": null,
+      "products": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "network_sale.unit",
+    "pk": 2,
+    "fields": {
+      "level": 1,
+      "type": "Retail",
+      "name": "New York Shop",
+      "email": null,
+      "country": null,
+      "town": "New York",
+      "street": "White",
+      "structure_number": "100",
+      "created_date": "2023-10-07",
+      "arrears": "1000.00",
+      "trading_network": 1,
+      "provider": 1,
+      "products": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "network_sale.unit",
+    "pk": 3,
+    "fields": {
+      "level": 2,
+      "type": "Individual",
+      "name": "Los Angeles Individual Seller",
+      "email": null,
+      "country": null,
+      "town": "Los Angeles",
+      "street": "Other",
+      "structure_number": "16",
+      "created_date": "2023-10-07",
+      "arrears": "1000.00",
+      "trading_network": 5,
+      "provider": null,
+      "products": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "network_sale.unit",
+    "pk": 4,
+    "fields": {
+      "level": 2,
+      "type": "Individual",
+      "name": "Chicago Individual Seller",
+      "email": null,
+      "country": null,
+      "town": "Chicago",
+      "street": "Long",
+      "structure_number": "99",
+      "created_date": "2023-10-07",
+      "arrears": "500.10",
+      "trading_network": 1,
+      "provider": 2,
+      "products": [
+        1
+      ]
+    }
+  }
+]
