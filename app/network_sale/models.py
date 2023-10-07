@@ -60,9 +60,7 @@ class Unit(models.Model):
         # related_name='unit_provider',
         null=True,
         blank=True)
-    products = models.ManyToManyField(Product,
-                                      # related_name='products'
-                                      )
+    products = models.ManyToManyField(Product)
 
     class Meta:
         verbose_name = "Unit"

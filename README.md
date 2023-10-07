@@ -1,17 +1,27 @@
-## !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+## The model of the network for the sale of electronics.
 The project is being rolled on Docker.
-Allow to create habits scheduler and make notification to user telegram bot.
 ## Prepare 
 * prepare /app/.env file (examples in /app/.env_sample)
 ## Start service
 * run command docker-compose up
-## Work with API (habits)
-* http://127.0.0.1:8000/api/v1/habits/ - show all habits that user has access
-* http://127.0.0.1:8000/api/v1/habit/<int:pk>/ - show user's habit detail information
-* http://127.0.0.1:8000/api/v1/habit/create/ - create habit
-* http://127.0.0.1:8000/api/v1/habit/update/<int:pk>/ - update habit
-* http://127.0.0.1:8000/api/v1/habit/delete/<int:pk>/ - delete habit
-* http://127.0.0.1:8000/api/v1/share_habits/ - show all public habits
+## Work with API (trading-network)
+* http://127.0.0.1:8000/api/v1/trading-network/ - show all trading-network
+* http://127.0.0.1:8000/api/v1/trading-network/<int:pk>/ - show trading-network detail information
+* http://127.0.0.1:8000/api/v1/trading-network/create/ - create trading-network
+* http://127.0.0.1:8000/api/v1/trading-network/update/<int:pk>/ - update trading-network
+* http://127.0.0.1:8000/api/v1/trading-network/delete/<int:pk>/ - delete trading-network
+## Work with API (product) 
+* http://127.0.0.1:8000/api/v1/product/ - show all products
+* http://127.0.0.1:8000/api/v1/product/<int:pk>/ - show product detail information
+* http://127.0.0.1:8000/api/v1/product/create/ - create product
+* http://127.0.0.1:8000/api/v1/product/update/<int:pk>/ - update product
+* http://127.0.0.1:8000/api/v1/product/delete/<int:pk>/ - delete product
+## Work with API (unit) 
+* http://127.0.0.1:8000/api/v1/unit/ - show all units
+* http://127.0.0.1:8000/api/v1/unit/<int:pk>/ - show unit detail information
+* http://127.0.0.1:8000/api/v1/unit/create/ - create unit
+* http://127.0.0.1:8000/api/v1/unit/update/<int:pk>/ - update unit
+* http://127.0.0.1:8000/api/v1/unit/delete/<int:pk>/ - delete unit
 ## Work with API (users)
 * http://127.0.0.1:8000/api/v1/users/show/ - show all users
 * http://127.0.0.1:8000/api/v1/users/show/<int:pk>/ - show user's detail information
@@ -20,8 +30,8 @@ Allow to create habits scheduler and make notification to user telegram bot.
 * http://127.0.0.1:8000/api/v1/users/registration/ - register user
 * http://127.0.0.1:8000/api/v1/users/token/ - get token for user
 * http://127.0.0.1:8000/api/v1/users/token/refresh/ - refresh user token
-## API Documentation (v1)
-* http://127.0.0.1:8000/redoc/
+* 
+
 ## Examples work with interface
 ### User authorization
 ![authorization.PNG](authorization.PNG)
@@ -40,6 +50,7 @@ Allow to create habits scheduler and make notification to user telegram bot.
 * frequency - daily habit or you can check day of week (MONDAY-SUNDAY)
 * time - when execute user habit
 * link_pleasant - usual (not pleasant) habit can have pleasant habit(in this case no award)
+![img.png](img/img.png)
 
 ## Additional
 * Author: Avramenko Nikolay
