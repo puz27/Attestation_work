@@ -16,7 +16,7 @@ urlpatterns = [
     path("trading-network/delete/<int:pk>/", TradingNetworkDeleteView.as_view(), name="trading_networks_delete"),
 
     # Product
-    path("/", ProductListView.as_view(), name="show_all_products"),
+    path("product/", ProductListView.as_view(), name="show_all_products"),
     path("product/<int:pk>/", ProductDetailView.as_view(), name="product_show"),
     path("product/create/", ProductCreateView.as_view(), name="product_create"),
     path("product/update/<int:pk>/", ProductUpdateView.as_view(), name="product_update"),
