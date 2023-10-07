@@ -56,8 +56,8 @@
     "model": "network_sale.product",
     "pk": 3,
     "fields": {
-      "title": "Spicy ╤hicken",
-      "model": "Spicy ╤hicken",
+      "title": "Spicy Chicken",
+      "model": "Spicy Chicken",
       "date": "2023-10-09"
     }
   },
@@ -65,8 +65,8 @@
     "model": "network_sale.product",
     "pk": 4,
     "fields": {
-      "title": "Normal ╤hicken",
-      "model": "Normal ╤hicken",
+      "title": "Normal Chicken",
+      "model": "Normal Chicken",
       "date": "2023-10-09"
     }
   },

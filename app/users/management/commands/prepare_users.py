@@ -16,6 +16,7 @@ def create_user(email: str, is_superuser: bool, is_staff: bool, is_active: bool,
         user.save()
 
 
+# Load users to base
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
