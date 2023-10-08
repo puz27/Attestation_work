@@ -57,7 +57,6 @@ class Unit(models.Model):
     provider = models.ForeignKey(
         'self', on_delete=models.SET_NULL,
         verbose_name='provider for unit',
-        # related_name='unit_provider',
         null=True,
         blank=True)
     products = models.ManyToManyField(Product)

@@ -1,9 +1,28 @@
 ## The model of the network for the sale of electronics.
 The project is being rolled on Docker.
+## Description of the technical task
+* Develop a 3-level network model
+* Develop for the admin panel
+  - link to "Supplier"
+  - filter by city name
+  - "admin action" that clears the arrears
+* For DRF
+  - prohibit updating "arrears to the supplier" field
+  - add the ability to filter objects by country
+* Configure API access rights
 ## Prepare 
 * prepare /app/.env file (examples in /app/.env_sample)
 ## Start service
 * run command docker-compose up
+
+Test data will be automatically added at the first launch
+  - test users configuration load with app/users/management/commands/prepare_users.py
+  - test data configuration load with app/users/management/commands/prepare_data.py
+## Description of database
+![img.png](img/img.png)
+## Examples work with interface
+
+
 ## Work with API (trading-network)
 * http://127.0.0.1:8000/api/v1/trading-network/ - show all trading-network
 * http://127.0.0.1:8000/api/v1/trading-network/<int:pk>/ - show trading-network detail information
@@ -32,25 +51,7 @@ The project is being rolled on Docker.
 * http://127.0.0.1:8000/api/v1/users/token/refresh/ - refresh user token
 * 
 
-## Examples work with interface
-### User authorization
-![authorization.PNG](authorization.PNG)
-### User registration
-![registration.PNG](registration.PNG)
-### Habit creation
-![create.PNG](create.PNG)
 
-### Description Requests format
-* place - place of user habit
-* action - what to do
-* award - what user get for his not pleasant habit
-* duration - duration of habit (less than 121 seconds)
-* is_public - public or private habit
-* is_pleasant - flag for pleasant or not pleasant (usual) habit
-* frequency - daily habit or you can check day of week (MONDAY-SUNDAY)
-* time - when execute user habit
-* link_pleasant - usual (not pleasant) habit can have pleasant habit(in this case no award)
-![img.png](img/img.png)
 
 ## Additional
 * Author: Avramenko Nikolay
