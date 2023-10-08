@@ -19,9 +19,18 @@ Test data will be automatically added at the first launch
   - test users configuration load with app/users/management/commands/prepare_users.py
   - test data configuration load with app/users/management/commands/prepare_data.py
 ## Description of database
+
+Network model:
+ - TradingNetwork
+ - Unit (type: Factory/Retail/Individual)
+ - Product
+
 ![img.png](img/img.png)
 ## Examples work with interface
-
+![img.png](img/interface.png)
+## Examples work with API
+![img.png](img/api_1.png)
+![img.png](img/api_2.png)
 
 ## Work with API (trading-network)
 * http://127.0.0.1:8000/api/v1/trading-network/ - show all trading-network
@@ -49,10 +58,7 @@ Test data will be automatically added at the first launch
 * http://127.0.0.1:8000/api/v1/users/registration/ - register user
 * http://127.0.0.1:8000/api/v1/users/token/ - get token for user
 * http://127.0.0.1:8000/api/v1/users/token/refresh/ - refresh user token
-* 
-
-
 
 ## Additional
 * Author: Avramenko Nikolay
-* Date of release: 2023/09/01
+* Date of release: 2023/10/08

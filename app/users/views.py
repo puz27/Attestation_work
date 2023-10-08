@@ -39,7 +39,6 @@ class UsersDeleteView(generics.DestroyAPIView):
 class UsersRegistrationView(generics.CreateAPIView):
     queryset = Users.objects.all()
     serializer_class = UserRegisterSerializer
-    # permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):
         serializer = UserRegisterSerializer(data=request.data)

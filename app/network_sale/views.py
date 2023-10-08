@@ -82,7 +82,7 @@ class UnitListView(generics.ListAPIView):
     """ All Units view"""
     queryset = Unit.objects.all()
     serializer_class = UnitSerializer
-    # filter by country (http://127.0.0.1:8000/api/v1/units?country=Russia)
+    # filter by country (http://127.0.0.1:8000/api/v1/unit?country=Russia)
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['country']
     permission_classes = [IsAuthenticated]
